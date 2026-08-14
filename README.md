@@ -22,6 +22,7 @@ Markdown
 | `MODEL_REGISTRY_POLL_SECONDS` | Интервал опроса новых чекпоинтов в секундах | `10` |
 | `OUTBOX_POLL_INTERVAL_SECONDS` | Интервал обработки неотправленных событий Outbox | `2.0` |
 | `LOG_LEVEL` | Уровень логирования (`DEBUG`, `INFO`, `WARNING`, `ERROR`) | `INFO` |
+| `CORS_ALLOW_ORIGINS` | Список разрешённых origin'ов для CORS через запятую (нужно для браузерных клиентов, например `llm-chat-client`). `*` — разрешить все | `*` |
 
 ---
 

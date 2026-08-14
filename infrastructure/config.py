@@ -9,6 +9,15 @@ class Settings(BaseSettings):
 
     LOG_LEVEL: str = "INFO"
 
+    CORS_ALLOW_ORIGINS: str = "*"
+
+    @property
+    def cors_allow_origins_list(self) -> list[str]:
+        raw = self.CORS_ALLOW_ORIGINS.strip()
+        if raw == "*":
+            return ["*"]
+        return [origin.strip() for origin in raw.split(",") if origin.strip()]
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
